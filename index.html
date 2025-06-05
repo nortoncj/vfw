@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/home/hero.css">
+    <link rel="stylesheet" href="/assets/css/home/spotlight.css">
+    <link rel="stylesheet" href="/assets/css/home/resources.css">
+    <link rel="stylesheet" href="/assets/css/home/find.css">
+    <link rel="stylesheet" href="/assets/css/home/discounts.css">
+    <link rel="stylesheet" href="/assets/css/home/events.css">
+
     <link rel="shortcut icon" href="./assets/images/logo-badge2.png" type="image/x-icon">
     <title>VFW</title>
 </head>
@@ -15,11 +22,11 @@
                 <h1 class="logo">VFW</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#membership">Membership</a></li>
-                <li><a href="#resources">Resources</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/membership.html">Membership</a></li>
+                <li><a href="/resources.html">Resources</a></li>
+                <li><a href="/rent.html">Rent Hall</a></li>
             </ul>
         </nav>
         
@@ -39,15 +46,62 @@
         <div class="spotlights-container">
             <h2 class="spotlights-title">Spotlight Stories</h2>
             <div class="spotlights-slider">
-            <div class="spotlight-item">
-                <div class="spotlight-left">
-                 <h3>Veteran Spotlight</h3>
-                <p>How the VFW helped me transition after service</p>   
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Slide 1 -->
+                    <div class="spotlight-item active">
+                        <div class="spotlight-left">
+                            <h3>Veteran Spotlight</h3>
+                            <p>How the VFW helped me transition after service</p>
+                        </div>
+                        <img src="./assets/images/julia.png" alt="Julia - Veteran Success Story">
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="spotlight-item">
+                        <div class="spotlight-left">
+                            <h3>Community Hero</h3>
+                            <p>Supporting local families through tough times</p>
+                        </div>
+                        <img src="https://images.pexels.com/photos/2418479/pexels-photo-2418479.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Community Support Program">
+                    </div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="spotlight-item">
+                        <div class="spotlight-left">
+                            <h3>Benefits Success</h3>
+                            <p>$50,000 in disability benefits secured</p>
+                        </div>
+                        <img src="https://images.pexels.com/photos/8806190/pexels-photo-8806190.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Benefits Success Story">
+                    </div>
+                    
+                    <!-- Slide 4 -->
+                    <div class="spotlight-item">
+                        <div class="spotlight-left">
+                            <h3>Youth Program</h3>
+                            <p>Inspiring the next generation through service</p>
+                        </div>
+                        <img src="https://images.pexels.com/photos/7983859/pexels-photo-7983859.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Youth Mentorship Program">
+                    </div>
                 </div>
                 
-                <img src="./assets/images/julia.png" alt="Spotlight 1">
+                <!-- Navigation Controls -->
+                <button class="carousel-controls carousel-prev" onclick="changeSlide(-1)" aria-label="Previous slide">‹</button>
+                <button class="carousel-controls carousel-next" onclick="changeSlide(1)" aria-label="Next slide">›</button>
                 
+                <!-- Play/Pause Button -->
+                <button class="carousel-play-pause" onclick="toggleAutoplay()" id="playPauseBtn" aria-label="Toggle autoplay">⏸</button>
+                
+                <!-- Progress Bar -->
+                <div class="carousel-progress" id="progressBar"></div>
             </div>
+            
+            <!-- Indicators -->
+            <ul class="carousel-indicators" id="indicators">
+                <li class="carousel-indicator active" onclick="goToSlide(0)" aria-label="Go to slide 1"></li>
+                <li class="carousel-indicator" onclick="goToSlide(1)" aria-label="Go to slide 2"></li>
+                <li class="carousel-indicator" onclick="goToSlide(2)" aria-label="Go to slide 3"></li>
+                <li class="carousel-indicator" onclick="goToSlide(3)" aria-label="Go to slide 4"></li>
+            </ul>
         </div>
     </section>
     <section class="resources-section">

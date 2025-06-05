@@ -64,6 +64,13 @@
     .find-form button {
         width: 100%;
     }
+    .find-form button:hover{
+        color: white;
+    background-color: var(--navy-color);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(12, 35, 64, 0.4);
+    }
+    
     .find-form {
         flex-direction: column;
         align-items: stretch;

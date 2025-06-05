@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--headline-font);
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+.membership-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 60px;
+    background: white;
+    border-radius: 8px;
+    padding: 60px 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title {
+    font-family: var(--title-font);
+    font-size: 3rem;
+    color: var(--navy-color);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--warm-gray);
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.cta-button {
+    background: var(--crimson-color);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--button-font);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background: var(--navy-color);
+    transform: translateY(-2px);
+}
+
+.content-section {
+    background: white;
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-family: var(--title-font);
+    font-size: 2.5rem;
+    color: var(--navy-color);
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.eligibility-list {
+    list-style: none;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.eligibility-item {
+    padding: 25px;
+    margin-bottom: 20px;
+    background: var(--background-color);
+    border-left: 4px solid var(--muted-gold);
+    border-radius: 0 8px 8px 0;
+}
+
+.eligibility-title {
+    font-family: var(--button-font);
+    font-weight: 700;
+    color: var(--navy-color);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.eligibility-description {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.benefit-card {
+    padding: 30px;
+    background: var(--background-color);
+    border-radius: 8px;
+    border-top: 4px solid var(--crimson-color);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: block;
+    color: var(--crimson-color);
+}
+
+.benefit-title {
+    font-family: var(--button-font);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--navy-color);
+    margin-bottom: 15px;
+}
+
+.benefit-description {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.membership-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.membership-card {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.membership-card:hover {
+    border-color: var(--muted-gold);
+    transform: translateY(-5px);
+}
+
+.membership-card.featured {
+    border-color: var(--crimson-color);
+    border-width: 3px;
+}
+
+.featured-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--crimson-color);
+    color: white;
+    padding: 8px 25px;
+    border-radius: 20px;
+    font-family: var(--button-font);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.membership-type {
+    font-family: var(--title-font);
+    font-size: 1.8rem;
+    color: var(--navy-color);
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.membership-price {
+    font-family: var(--title-font);
+    font-size: 2rem;
+    color: var(--crimson-color);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.membership-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.membership-features li {
+    padding: 8px 0;
+    color: var(--text-color);
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.membership-features li:last-child {
+    border-bottom: none;
+}
+
+.application-process {
+    background: var(--navy-color);
+    color: white;
+    border-radius: 8px;
+    padding: 50px 40px;
+    margin: 40px 0;
+}
+
+.process-title {
+    font-family: var(--title-font);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    color: var(--muted-gold);
+}
+
+.process-description {
+    text-align: center;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.process-step {
+    text-align: center;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--muted-gold);
+    color: var(--navy-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--title-font);
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+.step-title {
+    font-family: var(--button-font);
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--muted-gold);
+    font-size: 1.1rem;
+}
+
+.step-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.requirements-section {
+    background: #fff5f5;
+    border-left: 4px solid var(--crimson-color);
+    padding: 30px;
+    margin: 40px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.requirements-title {
+    font-family: var(--button-font);
+    color: var(--crimson-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.requirements-list {
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+.contact-section {
+    background: linear-gradient(135deg, var(--crimson-color), var(--navy-color));
+    color: white;
+    border-radius: 8px;
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.contact-title {
+    font-family: var(--title-font);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.contact-subtitle {
+    margin-bottom: 30px;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contact-item {
+    text-align: center;
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: block;
+    color: var(--muted-gold);
+}
+
+.contact-service {
+    font-family: var(--button-font);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.contact-details {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.value-proposition {
+    background: var(--muted-gold);
+    color: var(--navy-color);
+    border-radius: 8px;
+    padding: 40px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.value-title {
+    font-family: var(--title-font);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.value-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.value-highlight {
+    font-weight: 700;
+    color: var(--navy-color);
+}
+
+@media (max-width: 768px) {
+    .membership-container {
+        padding: 20px 15px;
+    }
+    
+    .hero-section,
+    .content-section,
+    .application-process,
+    .contact-section {
+        padding: 30px 20px;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .benefits-grid,
+    .membership-types,
+    .process-steps,
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+}
