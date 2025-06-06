@@ -13,8 +13,10 @@
         <nav class="top-nav">
             <div class="nav-title">
                 <img class="logo-badge" src="./assets/images/logo-badge.png" alt="vfw-badge">
-                <h1 class="logo">VFW </h1>
+                <h1 class="logo">VFW</h1>
             </div>
+            
+            <!-- Desktop Navigation -->
             <ul class="nav-links">
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/about.html">About</a></li>
@@ -22,8 +24,43 @@
                 <li><a href="/resources.html">Resources</a></li>
                 <li><a href="/rent.html">Rent Hall</a></li>
             </ul>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
         </nav>
     </section>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-title">
+                <img class="mobile-menu-badge" src="./assets/images/logo-badge.png" alt="VFW Badge">
+                VFW
+            </div>
+        </div>
+        
+        <ul class="mobile-nav-links">
+            <li><a href="/index.html" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="/about.html" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="/membership.html" onclick="closeMobileMenu()">Membership</a></li>
+            <li><a href="/resources.html" onclick="closeMobileMenu()">Resources</a></li>
+            <li><a href="/rent.html" onclick="closeMobileMenu()">Rent Hall</a></li>
+        </ul>
+        
+        <div class="mobile-menu-footer">
+            <p>Supporting Veterans of All Generations</p>
+        </div>
+    </div>
 <!-- Content -->
 <div class="rental-container">
     <!-- Hero Section -->

@@ -1,3 +1,130 @@
+class MobileNavigation {
+  constructor() {
+    this.isOpen = false;
+    this.mobileMenu = document.getElementById("mobileMenu");
+    this.mobileOverlay = document.getElementById("mobileOverlay");
+    this.hamburger = document.getElementById("hamburger");
+    this.body = document.body;
+
+    this.init();
+  }
+
+  init() {
+    this.addEventListeners();
+    this.handleResize();
+  }
+
+  addEventListeners() {
+    // Close menu on escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && this.isOpen) {
+        this.close();
+      }
+    });
+
+    // Close menu on window resize to desktop
+    window.addEventListener("resize", () => {
+      this.handleResize();
+    });
+
+    // Prevent scroll on touch devices when menu is open
+    this.mobileOverlay.addEventListener("touchmove", (e) => {
+      e.preventDefault();
+    });
+  }
+
+  toggle() {
+    if (this.isOpen) {
+      this.close();
+    } else {
+      this.open();
+    }
+  }
+
+  open() {
+    this.isOpen = true;
+    this.mobileMenu.classList.add("active");
+    this.mobileOverlay.classList.add("active");
+    this.hamburger.classList.add("open");
+    this.body.classList.add("menu-open");
+
+    // Focus trap
+    this.trapFocus();
+  }
+
+  close() {
+    this.isOpen = false;
+    this.mobileMenu.classList.remove("active");
+    this.mobileOverlay.classList.remove("active");
+    this.hamburger.classList.remove("open");
+    this.body.classList.remove("menu-open");
+
+    // Return focus to toggle button
+    document.querySelector(".mobile-menu-toggle").focus();
+  }
+
+  handleResize() {
+    // Close mobile menu if window is resized to desktop
+    if (window.innerWidth > 768 && this.isOpen) {
+      this.close();
+    }
+  }
+
+  trapFocus() {
+    const focusableElements = this.mobileMenu.querySelectorAll(
+      'a, button, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    firstElement.focus();
+
+    this.mobileMenu.addEventListener("keydown", (e) => {
+      if (e.key === "Tab") {
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            lastElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            firstElement.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    });
+  }
+}
+
+// Initialize mobile navigation
+const mobileNav = new MobileNavigation();
+
+// Global functions for inline event handlers
+function toggleMobileMenu() {
+  mobileNav.toggle();
+}
+
+function closeMobileMenu() {
+  mobileNav.close();
+}
+
+// Close menu when clicking outside on desktop
+document.addEventListener("click", (e) => {
+  const isClickInsideMenu = document
+    .getElementById("mobileMenu")
+    .contains(e.target);
+  const isClickOnToggle = document
+    .querySelector(".mobile-menu-toggle")
+    .contains(e.target);
+
+  if (mobileNav.isOpen && !isClickInsideMenu && !isClickOnToggle) {
+    mobileNav.close();
+  }
+});
+
+// Spotlight Carousel JavaScript
+// This script controls the functionality of the spotlight carousel, including slide transitions, autoplay, and user interactions.
 class SpotlightCarousel {
   constructor() {
     this.currentSlide = 0;
